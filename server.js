@@ -3,7 +3,9 @@ const app = express()
 
 
 
-app.POST()
+app.get('/',(req, res)=> {
+    res.render('index.ejs')
+})
 
 
 
