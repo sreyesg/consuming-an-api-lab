@@ -16,14 +16,16 @@ app.get('/',(req, res)=> {
 })
 // post route for Wheater
 app.post('/weather',(req, res)=> {
+    console.log(req.body)
     const zipCode = req.body.zipCode
+
     // build url
     const url = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&units=imperial&appid=${process.env.API_KEY}`
-    console.log(url)
+    // console.log(url)
     const fetchWeather = async (url) => {
         const response = await fetch(url)
         const data = await response.json()
-        console.log(data.weather)
+        console.log(data)
     }
     fetchWeather(url)
 })
