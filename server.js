@@ -3,12 +3,16 @@ const express =require('express')
 const app = express()
 const axios = require('axios')
 const { resolveInclude } = require('ejs')
+const path = require('path')
 
 // const bodyParser = require('body-parser')
 
 // Middleware
 app.use(express.urlencoded( {extended: true}))
 app.use(express.json())
+app.use(express.static(path.join(__dirname,'styles')))
+
+
 
 // home route
 app.get('/',(req, res)=> {
