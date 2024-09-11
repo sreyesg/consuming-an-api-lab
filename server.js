@@ -10,7 +10,7 @@ const path = require('path')
 // Middleware
 app.use(express.urlencoded( {extended: true}))
 app.use(express.json())
-app.use(express.static(path.join(__dirname,'styles')))
+app.use('/styles',express.static('styles'))
 
 
 
@@ -37,4 +37,4 @@ app.post('/weather',(req, res)=> {
    
 })
 
-app.listen(4000)
+app.listen(4001)
